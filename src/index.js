@@ -3,10 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css'
 
 class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      value: null,
+      click_count: 0 };
+  }
+
   render() {
     return (
-      <button className="square" onClick={ () => console.log(`arjan click`) }>
-        {this.props.value}
+      <button 
+        className="square"
+        onClick={ () => {
+          console.log(`arjan click ${this.state.click_count++}`);
+          }}>
+        {this.state.value}
       </button>
     );
   }
