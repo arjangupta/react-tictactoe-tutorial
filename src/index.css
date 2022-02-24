@@ -40,6 +40,10 @@ ol, ul {
   background: #ddd;
 }
 
+.square:hover {
+  background: rgb(238, 182, 182);
+}
+
 .game {
   display: flex;
   flex-direction: row;
