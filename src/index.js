@@ -7,7 +7,7 @@ class Square extends React.Component {
     super(props);
     this.state = { 
       value: null,
-      click_count: 0 };
+      click_count: 0, };
   }
 
   render() {
@@ -15,7 +15,7 @@ class Square extends React.Component {
       <button 
         className="square"
         onClick={ () => {
-          console.log(`arjan click ${this.state.click_count++}`);
+          console.log(`User clicked a total of ${++this.state.click_count} times in square ${this.props.square_id}`);
           }}>
         {this.state.value}
       </button>
@@ -25,7 +25,7 @@ class Square extends React.Component {
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square value={i} />;
+    return <Square square_id={i} />;
   }
 
   render() {
