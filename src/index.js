@@ -16,6 +16,7 @@ class Square extends React.Component {
         className="square"
         onClick={ () => {
           console.log(`User clicked a total of ${++this.state.click_count} times in square ${this.props.square_id}`);
+          this.setState({value: 'X'});
           }}>
         {this.state.value}
       </button>
