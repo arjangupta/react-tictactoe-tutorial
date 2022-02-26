@@ -15,7 +15,11 @@ class Square extends React.Component {
       <button 
         className="square"
         onClick={ () => {
-          console.log(`User clicked a total of ${++this.state.click_count} times in square ${this.props.square_id}`);
+          // Update number of clicks in current square
+          this.setState((state,props)=>({ click_count: state.click_count+1 }))
+          // Notify about click count
+          console.log(`User clicked a total of ${this.state.click_count} times in square ${this.props.square_id}`);
+          // Set the X
           this.setState({value: 'X'});
           }}>
         {this.state.value}
