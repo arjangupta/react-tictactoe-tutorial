@@ -5,7 +5,7 @@ import './index.css'
 class Square extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { click_count: 0, };
+    this.state = { click_count: 0 };
   }
 
   render() {
@@ -17,6 +17,8 @@ class Square extends React.Component {
           this.setState((state,props)=>({ click_count: state.click_count+1 }))
           // Notify about click count
           console.log(`User clicked a total of ${this.state.click_count} times in square ${this.props.square_id}`);
+          // Make the Board handle the click
+          this.props.onClick();
           }}>
         {this.state.value}
       </button>
