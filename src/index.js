@@ -20,7 +20,7 @@ class Square extends React.Component {
           // Make the Board handle the click
           this.props.onClick();
           }}>
-        {this.state.value}
+        {this.props.value}
       </button>
     );
   }
