@@ -42,6 +42,13 @@ class Board extends React.Component {
       />;
   }
 
+  handleClick(i) {
+    const squares_arr = this.state.squares.slice();
+    squares_arr[i] = 'X';
+    this.setState({ squares: squares_arr });
+    console.log(`Board's handleClick() has been called, new squares array is going to be set to: ${squares_arr}`);
+  }
+
   render() {
     const status = 'Next player: X';
 
