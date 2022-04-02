@@ -2,28 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
 
-class Square extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { click_count: 0 };
-  }
-
-  render() {
-    return (
-      <button 
-        className="square"
-        onClick={ () => {
-          // Update number of clicks in current square
-          this.setState((state,props)=>({ click_count: state.click_count+1 }))
-          // Notify about click count
-          console.log(`User clicked a total of ${this.state.click_count} times in square ${this.props.square_id}`);
-          // Make the Board handle the click
-          this.props.onClick();
-          }}>
-        {this.props.value}
-      </button>
-    );
-  }
+function Square(props) {
+  return (
+    <button className="square" onClick={ () => {
+        // Make the Board handle the click
+        this.props.onClick();
+        }}>
+      {this.props.value}
+    </button>
+  );
 }
 
 class Board extends React.Component {
@@ -36,7 +23,6 @@ class Board extends React.Component {
 
   renderSquare(i) {
     return <Square 
-        square_id={i}
         value={this.state.squares[i]}
         onClick={()=>{this.handleClick(i)}}
       />;
