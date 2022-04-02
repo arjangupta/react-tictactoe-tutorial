@@ -14,7 +14,8 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      squares: Array(9).fill(null)
+      squares: Array(9).fill(null),
+      xIsNext: true,
     }
   }
 
@@ -27,8 +28,11 @@ class Board extends React.Component {
 
   handleClick(i) {
     const squares_arr = this.state.squares.slice();
-    squares_arr[i] = 'X';
-    this.setState({ squares: squares_arr });
+    squares_arr[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({
+      squares: squares_arr,
+      xIsNext: !this.state.xIsNext, // flip the 'whose turn is it' state
+    });
     console.log(`Board's handleClick() has been called, new squares array is going to be set to: ${squares_arr}`);
   }
 
