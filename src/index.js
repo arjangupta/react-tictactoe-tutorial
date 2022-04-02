@@ -6,9 +6,9 @@ function Square(props) {
   return (
     <button className="square" onClick={ () => {
         // Make the Board handle the click
-        this.props.onClick();
-        }}>
-      {this.props.value}
+        props.onClick();
+      }}>
+      {props.value}
     </button>
   );
 }
