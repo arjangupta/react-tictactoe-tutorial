@@ -50,8 +50,7 @@ class Board extends React.Component {
     // Capture the current state of the squares array
     const squares_arr = this.state.squares.slice();
     // Decide whether we should ignore this click
-    if (calculateWinner(squares_arr[i]) || squares_arr(i))
-    {
+    if (calculateWinner(squares_arr) || squares_arr[i]) {
       return;
     }
     // Decide whether or not we should put an X or an O
