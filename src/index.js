@@ -4,10 +4,7 @@ import './index.css'
 
 function Square(props) {
   return (
-    <button className="square" onClick={ () => {
-        // Make the Board handle the click
-        props.onClick();
-      }}>
+    <button className="square" onClick={props.onClick}>
       {props.value}
     </button>
   );
