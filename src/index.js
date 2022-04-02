@@ -47,12 +47,20 @@ class Board extends React.Component {
   }
 
   handleClick(i) {
+    // Capture the current state of the squares array
     const squares_arr = this.state.squares.slice();
+    // Decide whether we should ignore this click
+    if (calculateWinner(squares_arr[i]) || squares_arr(i))
+    {
+      return;
+    }
+    // Decide whether or not we should put an X or an O
     squares_arr[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({
       squares: squares_arr,
       xIsNext: !this.state.xIsNext, // flip the 'whose turn is it' state
     });
+    // Print array
     console.log(`Board's handleClick() has been called, new squares array is going to be set to: ${squares_arr}`);
   }
 
